@@ -33,11 +33,20 @@ Make sure you have the following installed:
 
 ---
 
-## 📦 Step 2: Clone and Set Up the Project
+## 📄 File Structure 
 
-Open your terminal and run:
+virtual-tryon/
+├── app.py
+├── inference_pipeline.py
+├── requirements.txt
+├── .env
+└── assets/ (optional: for demo images)
 
-```bash
+
+---
+
+## 📦 Step 3: Setup an Run
+
 # 1. Clone the repository
 git clone https://github.com/yourusername/virtual-tryon.git
 cd virtual-tryon
@@ -65,17 +74,9 @@ ROBO_API_KEY=your_roboflow_api_key_here
 SEG_API_KEY=your_segmind_api_key_here
 
 
-## 📄 Step 5: Required Files
+## ▶️ Step 5: Run the App
 
-virtual-tryon/
-├── app.py
-├── inference_pipeline.py
-├── requirements.txt
-├── .env
-└── assets/ (optional: for demo images)
-
-## ▶️ Step 6: Run the App
-
+'''bash 
 python app.py
 
 

@@ -26,6 +26,13 @@ Perfect for fashion tech demos, e-commerce applications, and AI research!
 3. **Inpainting**: [Segmind SDXL Inpaint API](https://segmind.com) generates realistic clothing based on your text prompt.
 4. **Output**: View the final try-on result alongside the original image and segmentation mask.
 
+---
+
+## 🚀 Try It Live
+
+👉 **[Try the app on Hugging Face Spaces](https://huggingface.co/spaces/yourusername/virtual-tryon)** *(replace with your link)*
+
+Or run it locally — see instructions below.
 
 ---
 
@@ -33,6 +40,122 @@ Perfect for fashion tech demos, e-commerce applications, and AI research!
 
 ### 1. Clone the Repository
 
-```bash
+
 git clone https://github.com/yourusername/virtual-tryon.git
 cd virtual-tryon
+
+
+### 2. Set Up Virtual Environment
+
+
+```bash
+python -m venv venv
+source venv/bin/activate 
+```
+
+---
+
+### 3. Install Dependencies
+
+```txt
+pip install -r requirements.txt
+```
+
+
+> 📌 Requires Python 3.10+ for full compatibility with PyTorch and Ultralytics.
+
+### 4. Get Your API Keys
+
+You'll need two free API keys:
+
+| Service | Link | Purpose |
+|--------|------|--------|
+| **Roboflow** | [https://app.roboflow.com](https://app.roboflow.com) | Object detection (`main-fashion-wmyfk`) |
+| **Segmind** | [https://segmind.com](https://segmind.com) | SDXL Inpainting API |
+
+After signing up, copy your keys.
+
+### 5. Create `.env` File
+
+Create a `.env` file in the project root:
+
+```env
+ROBO_API_KEY=your_roboflow_api_key_here
+SEG_API_KEY=your_segmind_api_key_here
+
+```
+
+
+
+
+> 🔐 Never commit this file! It's already in `.gitignore`.
+
+### 6. Run the App
+
+```bash
+python app.py
+
+```
+
+
+Open the local URL (usually `http://127.0.0.1:7860`) in your browser.
+
+---
+
+## 📂 Project Structure
+
+
+```
+virtual-tryon/
+├── app.py                  # Gradio frontend
+├── inference_pipeline.py   # Core logic: detect → segment → inpaint
+├── requirements.txt        # Python dependencies
+├── .env                    # Your private API keys
+├── .gitignore
+├── README.md
+└── assets/                 # Demo images and results
+
+```
+
+
+---
+
+## 🛠️ Model Details
+
+| Component | Model Used |
+|---------|------------|
+| **Clothing Detection** | [`bruuj/main-fashion-wmyfk`](https://universe.roboflow.com/bruuj/main-fashion-wmyfk) (YOLOv8) |
+| **Segmentation** | [`sam2.1_b.pt`](https://docs.ultralytics.com/models/sam-2/) (Segment Anything Model 2.1) |
+| **Inpainting** | `SDXL Inpaint` via [Segmind API](https://api.segmind.com/v1/sdxl-inpaint) |
+
+> ✅ All models are automatically downloaded on first run.
+
+---
+
+## 🧪 Example Prompts
+
+Try these in the text box:
+
+- `"A red Hawaiian shirt with floral print"`
+- `"Black leather jacket with silver zippers"`
+- `"Blue denim jeans with ripped knees"`
+- `"A flowing white summer dress"`
+
+💡 **Tip**: Be specific about color, texture, and style for best results.
+
+---
+
+## 📸 Sample Output
+
+| Original | Mask | Try-On Result |
+|--------|------|----------------|
+| ![Original](assets/original.jpg) | ![Mask](assets/mask.png) | ![Result](assets/result.png) |
+
+---
+
+
+
+
+
+
+

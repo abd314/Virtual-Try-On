@@ -28,13 +28,22 @@ Perfect for fashion tech demos, e-commerce applications, and AI research!
 
 ---
 
-## 🚀 Try It Live
+## 📂 Project Structure
 
-👉 **[Try the app on Hugging Face Spaces](https://huggingface.co/spaces/yourusername/virtual-tryon)** *(replace with your link)*
 
-Or run it locally — see instructions below.
+```
+virtual-tryon/
+├── app.py                  # Gradio frontend
+├── inference_pipeline.py   # Core logic: detect → segment → inpaint
+├── requirements.txt        # Python dependencies
+├── .env                    # Your private API keys
+├── .gitignore
+├── README.md
+└── assets/                 # Demo images and results
 
+```
 ---
+
 
 ## 💻 Run Locally (VS Code / Local Machine)
 
@@ -101,21 +110,6 @@ python app.py
 Open the local URL (usually `http://127.0.0.1:7860`) in your browser.
 
 ---
-
-## 📂 Project Structure
-
-
-```
-virtual-tryon/
-├── app.py                  # Gradio frontend
-├── inference_pipeline.py   # Core logic: detect → segment → inpaint
-├── requirements.txt        # Python dependencies
-├── .env                    # Your private API keys
-├── .gitignore
-├── README.md
-└── assets/                 # Demo images and results
-
-```
 
 
 ---

@@ -1,0 +1,12 @@
+ultralytics>=8.3.0
+inference-sdk
+supervision>=0.26.0
+gradio>=4.0.0
+matplotlib
+numpy
+opencv-python
+pillow
+requests
+torch==2.3.1
+torchaudio==2.3.1
+torchvision==0.18.1

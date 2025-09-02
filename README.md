@@ -55,9 +55,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 ✅ This installs: ultralytics, inference-sdk, gradio, torch, opencv, and more. 
-     
 
- 
+    
+---
+
 ## 🗝️ Step 3: Get Your API Keys
 
 ROBO_API_KEY=your_roboflow_api_key_here
@@ -75,13 +76,14 @@ virtual-tryon/
 
 ## ▶️ Step 6: Run the App
 
-'''bash
 python app.py
 
 
 
 
 
+
+ 
 
 
 

@@ -2,36 +2,87 @@
 
 ![Virtual Try-On Demo](assets/demo.png)
 
-A cutting-edge **AI-powered virtual fitting room** that lets users try on new clothes using text prompts. This system combines **object detection**, **instance segmentation**, and **diffusion-based inpainting** to realistically overlay clothing onto user-uploaded images.
+A powerful **AI-powered virtual fitting room** that lets users try on new clothes using just a photo and a text prompt. This system combines:
 
-Perfect for fashion tech demos, e-commerce applications, and AI research!
+- **Clothing Detection** (YOLO via Roboflow)
+- **Instance Segmentation** (SAM 2.1)
+- **Text-to-Clothing Inpainting** (Segmind SDXL)
+- **Interactive Gradio UI**
 
----
-
-## 🎯 Features
-
-- ✅ **Upload your photo** – Full-body image support
-- ✅ **Select region**: Upper body (shirt, jacket) or Lower body (pants, skirt)
-- ✅ **Text-to-clothing**: Describe any outfit (e.g., *"a blue denim jacket"*)
-- ✅ **Automatic detection & segmentation** using YOLO + SAM 2.1
-- ✅ **High-quality inpainting** via Segmind's SDXL Inpaint API
-- ✅ **Gradio UI** – Interactive and easy-to-use web interface
+Perfect for fashion tech, e-commerce demos, or AI research!
 
 ---
 
-## 🔧 How It Works
+## 🚀 Quick Start Guide
 
-1. **Detection**: [YOLO model](https://universe.roboflow.com/bruuj/main-fashion-wmyfk) detects clothing items in the uploaded image.
-2. **Segmentation**: [SAM 2.1](https://docs.ultralytics.com/models/sam-2/) segments the selected clothing region using bounding box prompts.
-3. **Inpainting**: [Segmind SDXL Inpaint API](https://segmind.com) generates realistic clothing based on your text prompt.
-4. **Output**: View the final try-on result alongside the original image and segmentation mask.
+Follow these steps to **run this project locally on your machine** (e.g., in VS Code or any Python environment).
 
 ---
 
-## 💻 Run Locally (VS Code / Local Machine)
+## 🔧 Step 1: Install Required Software
 
-### 1. Clone the Repository
+Make sure you have the following installed:
+
+| Tool | Download Link |
+|------|---------------|
+| **Python 3.10 or 3.11** | [python.org](https://www.python.org/downloads/) |
+| **Git** | [git-scm.com](https://git-scm.com/) |
+| **VS Code (Optional)** | [code.visualstudio.com](https://code.visualstudio.com/) |
+
+> 💡 SAM 2.1 and PyTorch require Python 3.10+ — **do not use 3.12 or higher** for compatibility.
+
+---
+
+## 📦 Step 2: Clone and Set Up the Project
+
+Open your terminal and run:
 
 ```bash
+# 1. Clone the repository
 git clone https://github.com/yourusername/virtual-tryon.git
 cd virtual-tryon
+
+# 2. Create a virtual environment
+python -m venv venv
+
+# 3. Activate the virtual environment
+# On Windows:
+venv\Scripts\activate
+# On Mac/Linux:
+source venv/bin/activate
+
+# 4. Install all required packages
+pip install -r requirements.txt
+
+✅ This installs: ultralytics, inference-sdk, gradio, torch, opencv, and more. 
+     
+
+ 
+## 🗝️ Step 3: Get Your API Keys
+
+ROBO_API_KEY=your_roboflow_api_key_here
+SEG_API_KEY=your_segmind_api_key_here
+
+
+## 📄 Step 5: Required Files
+
+virtual-tryon/
+├── app.py
+├── inference_pipeline.py
+├── requirements.txt
+├── .env
+└── assets/ (optional: for demo images)
+
+## ▶️ Step 6: Run the App
+
+'''bash
+python app.py
+
+
+
+
+
+
+
+
+

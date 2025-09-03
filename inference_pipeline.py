@@ -19,11 +19,8 @@ import supervision as sv
 from ultralytics import YOLO
 
 # Load API keys
-ROBO_API_KEY = os.getenv("ROBO_API_KEY")
 SEG_API_KEY = os.getenv("SEG_API_KEY")
 
-if not ROBO_API_KEY:
-    raise ValueError("ROBO_API_KEY not found in .env file")
 if not SEG_API_KEY:
     raise ValueError("SEG_API_KEY not found in .env file")
 

@@ -1,6 +1,5 @@
 # 👕 Virtual Try-On System with AI
 
-![Virtual Try-On Demo](assets/demo.png)
 
 A cutting-edge **AI-powered virtual fitting room** that lets users try on new clothes using text prompts. This system combines **object detection**, **instance segmentation**, and **diffusion-based inpainting** to realistically overlay clothing onto user-uploaded images.
 
@@ -21,9 +20,9 @@ Perfect for fashion tech demos, e-commerce applications, and AI research!
 
 ## 🔧 How It Works
 
-1. **Detection**: [YOLO model](https://universe.roboflow.com/bruuj/main-fashion-wmyfk) detects clothing items in the uploaded image.
+1. **Detection**: [YOLO model](https://universe.roboflow.com/bruuj/main-fashion-wmyfk) detects clothing items in the uploaded image. Or, From ultralytics YOLO("best.pt").
 2. **Segmentation**: [SAM 2.1](https://docs.ultralytics.com/models/sam-2/) segments the selected clothing region using bounding box prompts.
-3. **Inpainting**: [Segmind SDXL Inpaint API](https://segmind.com) generates realistic clothing based on your text prompt.
+3. **Inpainting**: [Segmind flux-kontext-dev API](https://segmind.com) generates realistic clothing based on your text prompt.
 4. **Output**: View the final try-on result alongside the original image and segmentation mask.
 
 ---
@@ -84,6 +83,8 @@ You'll need two free API keys:
 
 After signing up, copy your keys.
 
+
+
 ### 5. Create `.env` File
 
 Create a `.env` file in the project root:
@@ -141,9 +142,7 @@ Try these in the text box:
 
 ## 📸 Sample Output
 
-| Original | Mask | Try-On Result |
-|--------|------|----------------|
-| ![Original](assets/original.jpg) | ![Mask](assets/mask.png) | ![Result](assets/result.png) |
+![Virtual Try-On Demo](assets/demo.png)
 
 ---
 

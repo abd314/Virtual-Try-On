@@ -4,7 +4,7 @@ from inference_pipeline import run_virtual_tryon
 import os
 
 # Check environment
-if not os.path.exists(".env"):
+if not os.path.exists(os.path.join(os.path.dirname(__file__), ".env")):
     gr.Warning("⚠️ .env file not found. Please create one with ROBO_API_KEY and SEG_API_KEY.")
 
 def process_image(upload_image, region, prompt):
@@ -31,19 +31,19 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
     with gr.Row():
         with gr.Column():
             img_in = gr.Image(type="pil", label="Upload Image")
-            region_sel = gr.Radio(["upper", "lower"], label="Clothing Region", value="upper")
+            region_sel = gr.Radio(["upper", "lower"], label="Clothing Region")
             prompt_txt = gr.Textbox(label="Describe Clothing", placeholder="e.g., A red leather jacket")
             btn = gr.Button("Try On", variant="primary")
 
         with gr.Column():
-            gr.Image(label="Original Image", interactive=False)
-            gr.Image(label="Detected Mask", interactive=False)
-            gr.Image(label="Try-On Result", interactive=False)
+            original_out = gr.Image(label="Original Image", interactive=False)
+            mask_out = gr.Image(label="Detected Mask", interactive=False)
+            result_out = gr.Image(label="Try-On Result", interactive=False)
 
     btn.click(
         fn=process_image,
         inputs=[img_in, region_sel, prompt_txt],
-        outputs=gr.Gallery(columns=1, height="auto")
+        outputs=[original_out, mask_out, result_out]
     )
 
     gr.Markdown("### 💡 Tips")

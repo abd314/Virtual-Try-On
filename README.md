@@ -23,7 +23,7 @@ Perfect for fashion tech demos, e-commerce applications, and AI research!
 1. **Detection**: [YOLO model](https://universe.roboflow.com/bruuj/main-fashion-wmyfk) detects clothing items in the uploaded image.   
    Or, YOLO from ultralytics and [best.pt](https://huggingface.co/kesimeg/yolov8n-clothing-detection/blob/main/best.pt).
 3. **Segmentation**: [SAM 2.1](https://docs.ultralytics.com/models/sam-2/) segments the selected clothing region using bounding box prompts.
-4. **Inpainting**: [Segmind flux-kontext-dev API](https://segmind.com) generates realistic clothing based on your text prompt.
+4. **Inpainting**: [Segmind API](https://segmind.com) generates realistic clothing based on your text prompt.
 5. **Output**: View the final try-on result alongside the original image and segmentation mask.
 
 ---
@@ -80,7 +80,7 @@ You'll need two free API keys:
 | Service | Link | Purpose |
 |--------|------|--------|
 | **Roboflow** | [https://app.roboflow.com](https://app.roboflow.com) | Object detection (`main-fashion-wmyfk`) |
-| **Segmind** | [https://segmind.com](https://segmind.com) | SDXL Inpainting API |
+| **Segmind** | [https://segmind.com](https://segmind.com) | flux-kontext-dev API |
 
 After signing up, copy your keys.
 
@@ -120,9 +120,9 @@ Open the local URL (usually `http://127.0.0.1:7860`) in your browser.
 
 | Component | Model Used |
 |---------|------------|
-| **Clothing Detection** | [`bruuj/main-fashion-wmyfk`](https://universe.roboflow.com/bruuj/main-fashion-wmyfk) (YOLOv8) |
+| **Clothing Detection** | [`best.pt`](best.pt) (YOLO) |
 | **Segmentation** | [`sam2.1_b.pt`](https://docs.ultralytics.com/models/sam-2/) (Segment Anything Model 2.1) |
-| **Inpainting** | `SDXL Inpaint` via [Segmind API](https://api.segmind.com/v1/sdxl-inpaint) |
+| **Inpainting** | ` Inpaint` via [Segmind API](https://www.segmind.com/models/flux-kontext-dev) |
 
 > ✅ All models are automatically downloaded on first run.
 

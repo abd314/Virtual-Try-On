@@ -21,7 +21,7 @@ Perfect for fashion tech demos, e-commerce applications, and AI research!
 ## 🔧 How It Works
 
 1. **Detection**: [YOLO model](https://universe.roboflow.com/bruuj/main-fashion-wmyfk) detects clothing items in the uploaded image.   
-   Or, YOLO from ultralytics and best.pt  (https://huggingface.co/kesimeg/yolov8n-clothing-detection/blob/main/best.pt).
+   Or, YOLO from ultralytics and [best.pt](https://huggingface.co/kesimeg/yolov8n-clothing-detection/blob/main/best.pt).
 3. **Segmentation**: [SAM 2.1](https://docs.ultralytics.com/models/sam-2/) segments the selected clothing region using bounding box prompts.
 4. **Inpainting**: [Segmind flux-kontext-dev API](https://segmind.com) generates realistic clothing based on your text prompt.
 5. **Output**: View the final try-on result alongside the original image and segmentation mask.

@@ -13,15 +13,14 @@ Perfect for fashion tech demos, e-commerce applications, and AI research!
 - ✅ **Select region**: Upper body (shirt, jacket) or Lower body (pants, skirt)
 - ✅ **Text-to-clothing**: Describe any outfit (e.g., *"a blue denim jacket"*)
 - ✅ **Automatic detection & segmentation** using YOLO + SAM 2.1
-- ✅ **High-quality inpainting** via Segmind's SDXL Inpaint API
+- ✅ **High-quality inpainting** via Segmind's API
 - ✅ **Gradio UI** – Interactive and easy-to-use web interface
 
 ---
 
 ## 🔧 How It Works
 
-1. **Detection**: [YOLO model](https://universe.roboflow.com/bruuj/main-fashion-wmyfk) detects clothing items in the uploaded image.   
-   Or, YOLO from ultralytics and [best.pt](https://huggingface.co/kesimeg/yolov8n-clothing-detection/blob/main/best.pt).
+1. **Detection**: [YOLO model](https://huggingface.co/kesimeg/yolov8n-clothing-detection/blob/main/best.pt) detects clothing items in the uploaded image.   
 3. **Segmentation**: [SAM 2.1](https://docs.ultralytics.com/models/sam-2/) segments the selected clothing region using bounding box prompts.
 4. **Inpainting**: [Segmind API](https://segmind.com) generates realistic clothing based on your text prompt.
 5. **Output**: View the final try-on result alongside the original image and segmentation mask.
@@ -50,8 +49,8 @@ virtual-tryon/
 ### 1. Clone the Repository
 
 
-git clone https://github.com/yourusername/virtual-tryon.git
-cd virtual-tryon
+git clone https://github.com/yourusername/virtual-tryon.git   
+cd Virtual-Try-On 
 
 
 ### 2. Set Up Virtual Environment
